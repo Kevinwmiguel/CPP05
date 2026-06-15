@@ -1,8 +1,6 @@
-NAME		=	Mommy,whenIgrowup,Iwanttobea+bureaucrat!
+NAME		=	MommywhenIgrowupIwanttobeabureaucrat
 
-SRCS		= main.cpp Bureaucrat.cpp AForm.cpp \ 
-			  ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \ 
-			  PresidentialPardonForm.cpp
+SRCS		=	main.cpp Bureaucrat.cpp
 
 OBJDIR  	=	obj
 OBJS     	=  $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))

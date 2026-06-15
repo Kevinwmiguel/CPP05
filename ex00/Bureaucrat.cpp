@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureucrat.cpp                                      :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 00:28:41 by kwillian          #+#    #+#             */
-/*   Updated: 2026/06/15 00:48:12 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/06/15 17:37:15 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureucrat.hpp"
+#include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat()
 {
@@ -24,8 +24,15 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other)
 {
-    this->name = other.name;
-    this->grade = other.grade;
+    this->_name = other._name;
+    this->_grade = other._grade;
+    std::cout << "Bureucrat copy assignament constructor has been called" << std::endl;
+}
+
+Bureaucrat::Bureaucrat(std::string name, int grade)
+{
+    this->_name = name;
+    this->_grade = grade;
     std::cout << "Bureucrat copy assignament constructor has been called" << std::endl;
 }
 
@@ -33,40 +40,46 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
     if (this != &other)
     {
-        this->name = other.getName();
-        this->grade = other.getGrade();
+        this->_name = other.getName();
+        this->_grade = other.getGrade();
     }
     return *this;
 }
 
 std::string Bureaucrat::getName() const
 {
-    return (this->name);
+    return (this->_name);
 }
     
 int Bureaucrat::getGrade() const
 {
-    return (this->grade);
+    return (this->_grade);
 }
 
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& Bureaucrat)
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat)
 {
-    out << Bureaucrat;
+    out << bureaucrat.getName()
+        << ", bureaucrat grade "
+        << bureaucrat.getGrade();
     return out;
 }
 
-std::string Bureaucrat::setName(std::string name)
+void Bureaucrat::setName(std::string name)
 {
-    this->name = name;
+    this->_name = name;
 }
 
-std::string Bureaucrat::setGrade(int grade)
+void Bureaucrat::setGrade(int grade)
 {
-    this->grade = grade;
+    this->_grade = grade;
 }
 
 void Bureaucrat::incrementGrade()
 {
-    if (this->grade > 1)
-        this->grade = grade - 1;
+    if (this->_grade > 1)
+        this->_grade = _grade - 1;
+    else if (this->_grade == 1)
+        std::cout << "The grade is at the maximum!" << std::endl;
+    else
+        std::cout << "out of range " << std::endl;
 }
