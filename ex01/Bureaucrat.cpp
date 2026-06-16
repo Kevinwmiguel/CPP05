@@ -6,12 +6,12 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 00:28:41 by kwillian          #+#    #+#             */
-/*   Updated: 2026/06/16 19:00:35 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/06/16 19:04:32 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat()
 {
@@ -36,9 +36,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
         throw gradeTooHighException();
     else if (grade > 150)
         throw gradeTooLowException();
-
     this->_name = name;
     this->_grade = grade;
+    std::cout << "Bureucrat copy assignament constructor has been called" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
@@ -97,4 +97,19 @@ void Bureaucrat::decrementGrade()
         std::cout << "The grade is at the maximum!" << std::endl;
     else
         std::cout << "out of range " << std::endl;
+}
+
+void Bureaucrat::signForm( AForm& AForm)
+{
+    try
+    {
+        AForm.beSigned(*this);
+    }
+    catch (std::exception &e)
+    {
+        std::cout << _name << " couldn't sign " << AForm.getName() 
+        << " because " << e.what() << std::endl;
+        return ;
+    }
+    std::cout << _name << " signed " << AForm.getName() << std::endl;
 }

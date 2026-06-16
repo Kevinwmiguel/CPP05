@@ -1,6 +1,6 @@
-NAME		= Form up, maggots!
+NAME		= Formup,maggots
 
-SRCS		=
+SRCS		= AForm.cpp Bureaucrat.cpp main.cpp 
 
 OBJDIR  	=	obj
 OBJS     	=  $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
