@@ -6,19 +6,19 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 12:48:59 by kwillian          #+#    #+#             */
-/*   Updated: 2026/06/16 19:05:37 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/06/23 12:28:52 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "Form.hpp"
 
 int main()
 {
     try
     {                           
-        Bureaucrat bob("Bob", 50);
-        AForm form("TopSecret", 2, 2);
+        Bureaucrat bob("Bob", 510);
+        Form form("TopSecret", 2, 2);
         bob.signForm(form);
 
         Bureaucrat alice("Alice", 1);

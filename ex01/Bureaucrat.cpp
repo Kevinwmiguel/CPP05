@@ -6,12 +6,12 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 00:28:41 by kwillian          #+#    #+#             */
-/*   Updated: 2026/06/16 19:04:32 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/06/18 20:00:49 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat()
 {
@@ -99,17 +99,17 @@ void Bureaucrat::decrementGrade()
         std::cout << "out of range " << std::endl;
 }
 
-void Bureaucrat::signForm( AForm& AForm)
+void Bureaucrat::signForm( Form& Form)
 {
     try
     {
-        AForm.beSigned(*this);
+        Form.beSigned(*this);
     }
     catch (std::exception &e)
     {
-        std::cout << _name << " couldn't sign " << AForm.getName() 
+        std::cout << _name << " couldn't sign " << Form.getName() 
         << " because " << e.what() << std::endl;
         return ;
     }
-    std::cout << _name << " signed " << AForm.getName() << std::endl;
+    std::cout << _name << " signed " << Form.getName() << std::endl;
 }

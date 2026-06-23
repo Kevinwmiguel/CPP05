@@ -1,7 +1,7 @@
-NAME		=	No,youneedform28B,not28C...
+NAME		=	Noyouneedform28Bnot28C...
 
-SRCS		= 	main.cpp Bureaucrat.cpp AForm.cpp \ 
-			  	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \ 
+SRCS		= 	main.cpp Bureaucrat.cpp AForm.cpp \
+			  	ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
 			  	PresidentialPardonForm.cpp
 
 OBJDIR  	=	obj

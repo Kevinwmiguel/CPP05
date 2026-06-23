@@ -6,7 +6,7 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 23:59:43 by kwillian          #+#    #+#             */
-/*   Updated: 2026/06/16 12:48:03 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/06/23 11:27:33 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,58 @@
 #include <string>
 #include <exception>
 
+class Bureaucrat;
+
 class AForm
 {
-    std::string _name;
+    private:
+    const std::string _name;
     bool    _signed;
-    const int   _grade;
-    const int   _execute;    
+    const int   _signGrade;
+    const int   _executeGrade;
 
-    void setName();
-    void setSigned();
-    void setGrade();
-    void setExecution();
+    protected:
+    virtual void executeAction() const = 0;
+
+    public:
+    AForm();
+    virtual ~AForm();
+    AForm(const AForm& other);
+    AForm(const std::string name, const int sign_grade, const int execute_grade);
+    AForm& operator=(const AForm& other);
+    void beSigned(const Bureaucrat &bureaucrat);
+    void execute(Bureaucrat const & executor) const;
     std::string getName() const;
-    bool getSigned() const;
-    const int getGrade() const;
-    const int getExecute() const; 
+    bool getIsSigned() const;
+    int getSignGrade() const;
+    int getExecuteGrade() const;
 
+    class GradeTooHighException : public std::exception
+    {
+        public:
+        virtual const char *what() const throw()
+        {
+            return "AForm::GradeTooHighException";
+        }
+    };
+    class GradeTooLowException : public std::exception
+    {
+        public:
+        virtual const char *what() const throw()
+        {
+            return "AForm::GradeTooLowException";
+        }
+    };
+    class FormNotSignedException : public std::exception
+    {
+        public:
+        virtual const char *what() const throw()
+        {
+            return "AForm::FormNotSignedException";
+        }
+    };
 };
 
-std::ostream&operator<<(std::ostream& out, const AForm& AForm);
-/*
-constant name.
-•A boolean indicating whether it is signed (at construction, it is not).
-•A constant grade required to sign it.
-•A constant grade required to execute it.
-*/
+std::ostream& operator<<(std::ostream& out, const AForm& form);
 
 #endif
