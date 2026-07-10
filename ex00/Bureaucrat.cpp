@@ -6,10 +6,9 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 00:28:41 by kwillian          #+#    #+#             */
-/*   Updated: 2026/07/10 16:44:33 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/07/10 18:07:36 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Bureaucrat.hpp"
 
@@ -39,7 +38,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
     this->_grade = grade;
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) : _name(other.getName())
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
     if (this != &other)
     {

@@ -6,7 +6,7 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 00:28:37 by kwillian          #+#    #+#             */
-/*   Updated: 2026/07/10 16:28:05 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/07/10 17:55:40 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Bureaucrat
     Bureaucrat(const Bureaucrat& other);
     Bureaucrat&operator=(const Bureaucrat& other);
     std::string getName() const;
-    void setName(std::string name);
+    //void setName(std::string name);
     void setGrade(int grade);
     int getGrade() const;
     void incrementGrade();
