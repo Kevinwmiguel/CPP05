@@ -6,7 +6,7 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 00:28:37 by kwillian          #+#    #+#             */
-/*   Updated: 2026/06/16 18:31:49 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/07/10 16:28:05 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Bureaucrat
 {
     private:
-    std::string _name;
+    std::string const _name;
     int         _grade;
 
     public:

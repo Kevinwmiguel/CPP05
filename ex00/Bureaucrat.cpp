@@ -6,7 +6,7 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 00:28:41 by kwillian          #+#    #+#             */
-/*   Updated: 2026/06/23 12:19:03 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/07/10 16:44:33 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,27 @@ Bureaucrat::~Bureaucrat()
     std::cout << "Bureucrat default destructor has been called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other)
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other.getName())
 {
-    this->_name = other._name;
+    //this->_name = other._name;
     this->_grade = other._grade;
     std::cout << "Bureucrat copy assignament constructor has been called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
     if (grade < 1)
         throw gradeTooHighException();
     else if (grade > 150)
         throw gradeTooLowException();
-
-    this->_name = name;
     this->_grade = grade;
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) : _name(other.getName())
 {
     if (this != &other)
     {
-        this->_name = other.getName();
+        //this->_name = other.getName();
         this->_grade = other.getGrade();
     }
     return *this;
@@ -69,10 +67,10 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat)
     return out;
 }
 
-void Bureaucrat::setName(std::string name)
-{
-    this->_name = name;
-}
+// void Bureaucrat::setName(std::string name)
+// {
+//     this->_name = name;
+// }
 
 void Bureaucrat::setGrade(int grade)
 {
