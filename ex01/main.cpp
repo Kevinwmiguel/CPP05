@@ -6,7 +6,7 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 12:48:59 by kwillian          #+#    #+#             */
-/*   Updated: 2026/06/23 12:28:52 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/07/20 17:30:55 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@ int main()
 {
     try
     {                           
-        Bureaucrat bob("Bob", 510);
-        Form form("TopSecret", 2, 2);
+        Bureaucrat bob("Bob", 150);
+        Form form("TopSecret", 100, 100);
         bob.signForm(form);
 
         Bureaucrat alice("Alice", 1);
         alice.signForm(form);
         alice.signForm(form);
+        
 
-        std::cout << bob << std::endl;
+        std::cout << "\n " << bob << std::endl;
         std::cout << alice << std::endl;
         std::cout << form << std::endl;
     }

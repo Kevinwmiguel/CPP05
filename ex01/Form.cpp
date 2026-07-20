@@ -6,14 +6,14 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 12:58:26 by kwillian          #+#    #+#             */
-/*   Updated: 2026/06/23 12:28:40 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/07/20 17:32:40 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form() : _name("Default"), _signed(false), _grade(150), _execute(150)
+Form::Form() : _name("Default"), _signed(false), _grade(75), _execute(75)
 {
     std::cout << "Form Constructor has been called" << std::endl;    
 }
@@ -29,7 +29,7 @@ Form::Form(const Form& other) : _name(other._name),
 }
 
 Form::Form(const std::string name, const int sign_grade, const int execute_grade) : _name(name), 
-    _signed(false), _grade(150), _execute(150)
+    _signed(false), _grade(75), _execute(75)
 {
     if (sign_grade < 1 || execute_grade < 1)
         throw GradeTooHighException();
@@ -73,7 +73,7 @@ int Form::getExecuteGrade() const
 
 std::ostream&operator<<(std::ostream& out, const Form& Form)
 {
-	out << "Name: " << Form.getName() << " isSigned: " 
+	out << "Name: " << Form.getName() << " is signed: " 
         << Form.getIsSigned() << " SignGrade: "
         << Form.getSignGrade() << " ExecuteGrade: " 
         << Form.getExecuteGrade() << std::endl;
