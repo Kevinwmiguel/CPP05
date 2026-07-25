@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kevin <kevin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 12:48:59 by kwillian          #+#    #+#             */
-/*   Updated: 2026/07/20 17:30:55 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/07/25 15:28:19 by kevin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,13 @@ int main()
 {
     try
     {                           
-        Bureaucrat bob("Bob", 150);
-        Form form("TopSecret", 100, 100);
+        Bureaucrat bob("Bob", 1);
+        Form form("TopSecret", 7, 6);
         bob.signForm(form);
-
-        Bureaucrat alice("Alice", 1);
+        Bureaucrat alice("Alice", 5);
         alice.signForm(form);
         alice.signForm(form);
-        
-
-        std::cout << "\n " << bob << std::endl;
+        std::cout << bob << std::endl;
         std::cout << alice << std::endl;
         std::cout << form << std::endl;
     }
