@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kevin <kevin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 12:58:26 by kwillian          #+#    #+#             */
-/*   Updated: 2026/07/25 15:28:52 by kevin            ###   ########.fr       */
+/*   Updated: 2026/07/20 17:32:40 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Form::Form(const Form& other) : _name(other._name),
 }
 
 Form::Form(const std::string name, const int sign_grade, const int execute_grade) : _name(name), 
-    _signed(false), _grade(sign_grade), _execute(execute_grade)
+    _signed(false), _grade(75), _execute(75)
 {
     if (sign_grade < 1 || execute_grade < 1)
         throw GradeTooHighException();
@@ -73,7 +73,7 @@ int Form::getExecuteGrade() const
 
 std::ostream&operator<<(std::ostream& out, const Form& Form)
 {
-	out << "Form name: " << Form.getName() << " is signed: " 
+	out << "Name: " << Form.getName() << " is signed: " 
         << Form.getIsSigned() << " SignGrade: "
         << Form.getSignGrade() << " ExecuteGrade: " 
         << Form.getExecuteGrade() << std::endl;

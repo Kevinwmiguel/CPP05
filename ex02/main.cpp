@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kevin <kevin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 23:58:39 by kwillian          #+#    #+#             */
-/*   Updated: 2026/07/25 18:13:05 by kevin            ###   ########.fr       */
+/*   Updated: 2026/06/23 13:22:47 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
     Bureaucrat high("Alice", 1);
     Bureaucrat low("Bob", 150);
     Bureaucrat mid("Clayton", 75);
-    ShrubberyCreationForm shrub("target");
+    ShrubberyCreationForm shrub("home");
     RobotomyRequestForm robot("Marvin");
     PresidentialPardonForm pardon("Arthur Dent");
 
@@ -38,13 +38,10 @@ int main()
     mid.signForm(shrub);
     mid.signForm(robot);
     mid.signForm(pardon);
-
     std::cout << "\n-- Execution phase --" << std::endl;
     low.executeForm(shrub);
     high.executeForm(shrub);
-    //std::cout << "error here" << std::endl;
     high.executeForm(robot);
-    //std::cout << "error here" << std::endl;
     high.executeForm(pardon);
 
     mid.executeForm(shrub);
