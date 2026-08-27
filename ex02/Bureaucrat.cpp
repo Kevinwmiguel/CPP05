@@ -13,6 +13,16 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
+const char* Bureaucrat::gradeTooHighException:: what() const throw()
+{
+    return "Bureaucrat::GradeTooHighException";
+}
+
+const char* Bureaucrat::gradeTooLowException:: what() const throw()
+{
+    return "Bureaucrat::GradeTooLowException";
+}
+
 Bureaucrat::Bureaucrat()
 {
     std::cout << "Bureaucrat default constructor has been called" << std::endl;
