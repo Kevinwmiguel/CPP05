@@ -6,12 +6,22 @@
 /*   By: kwillian <kwillian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 12:58:26 by kwillian          #+#    #+#             */
-/*   Updated: 2026/07/20 17:32:40 by kwillian         ###   ########.fr       */
+/*   Updated: 2026/08/29 18:22:45 by kwillian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
+
+const char* Form::GradeTooLowException:: what() const throw()
+{
+    return "Form::GradeTooLowException";
+}
+
+const char* Form::GradeTooHighException:: what() const throw()
+{
+    return "Form::GradeTooHighException";
+}
 
 Form::Form() : _name("Default"), _signed(false), _grade(75), _execute(75)
 {
